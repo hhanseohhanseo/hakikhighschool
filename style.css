@@ -1,0 +1,251 @@
+:root {
+    --bg-color: #f2f2f7;
+    --card-bg: #ffffff;
+    --text-primary: #1c1c1e;
+    --text-secondary: #8e8e93;
+    --accent-orange: #ff9500;
+    --accent-green: #34c759;
+    --accent-blue: #007aff;
+    --border-color: #e5e5ea;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.app-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.search-box input {
+    width: 120px;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-blue);
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.search-box button:hover {
+    background-color: #0062cc;
+}
+
+.search-box button:active {
+    transform: scale(0.98);
+}
+
+.error-msg {
+    color: #ff3b30;
+    font-size: 14px;
+    margin-top: 8px;
+    min-height: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.date-range-card {
+    text-align: center;
+    padding: 16px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.date-range {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.tab {
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.tab.active {
+    background-color: #e5e5ea;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.chart-header {
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.main-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subtitle-bottom {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.legend {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.dot.orange {
+    background-color: var(--accent-orange);
+}
+
+.line-icon {
+    width: 16px;
+    height: 2px;
+    background-color: var(--text-secondary);
+    margin-right: 8px;
+    position: relative;
+}
+.line-icon::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 6px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 2px, #ccc 2px, #ccc 4px);
+    top: -2px;
+    left: 0;
+    opacity: 0.3;
+}
+
+.info-card {
+    padding: 20px 24px;
+}
+
+.info-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.info-body p {
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background-color: var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--accent-green);
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+.mt-2 { margin-top: 8px; }
+.text-sm { font-size: 13px; }
+.text-gray { color: var(--text-secondary); }
